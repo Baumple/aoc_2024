@@ -1,6 +1,5 @@
-import days/day2
-import days/day1
+import days/day5
 
 pub fn main() {
-  day2.task1()
+  day5.task1()
 }
