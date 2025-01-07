@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, rust-overlay, ... }: 
+  outputs = { nixpkgs, flake-utils, rust-overlay, ... }: 
   flake-utils.lib.eachDefaultSystem(system: 
   let 
     overlays = [ (import rust-overlay) (final: prev: {
@@ -18,18 +18,18 @@
         src = prev.fetchFromGitHub {
           owner = "gleam-lang";
           repo = "gleam";
-          rev = "refs/tags/v1.5.1";
-          hash = "sha256-4/NDZGq62M0tdWerIkmoYS0WHC06AV8c9vlo/6FhsAo=";
+          rev = "refs/tags/v1.7.0";
+          hash = "sha256-Nr8OpinQ1Dmo6e8XpBYrtaRRhcX2s1TW/5nM1LxApGg=";
         };
         cargoDeps = oldAttrs.cargoDeps.overrideAttrs (prev.lib.const {
           name = "gleam-lang-vendor.tar.gz";
           inherit src;
-          outputHash = "sha256-igAPbQVjecuOHnpPIKUgSR5LAD703glUQapDbj7Kdlg=";
+          outputHash = "sha256-+TjzRb72EXgo2Fs7QdLYfK2JYyv4Xs7c/sZOTO4pLl8=";
         });
       });
     }) ];
 
-    rust = pkgs.rust-bin.stable.latest.default.override {
+    rust = pkgs.rust-bin.beta.latest.default.override {
       extensions = [
         "rust-src"
         "rust-analyzer"
