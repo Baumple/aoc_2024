@@ -47,6 +47,7 @@ pub fn task2() {
       }
     })
 
-  list.map(left, fn(v) { v * list.count(right, fn(x) { x == v }) }) |> list.reduce(int.add)
+  list.map(left, fn(v) { v * list.count(right, fn(x) { x == v }) })
+  |> list.reduce(int.add)
   |> io.debug
 }

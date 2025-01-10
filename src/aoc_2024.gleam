@@ -1,5 +1,5 @@
-import days/day2
 import argv
+import days/day2
 
 pub fn main() {
   let use_test_file = case argv.load().arguments {
