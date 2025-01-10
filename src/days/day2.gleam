@@ -1,5 +1,3 @@
-//// WARN: Completely wrong..
-
 import gleam/function
 import gleam/int
 import gleam/io
